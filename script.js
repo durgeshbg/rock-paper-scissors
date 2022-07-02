@@ -8,7 +8,9 @@ let playerInput = prompt('Enter: ');
 let playerSelection = playerInput.toLowerCase();
 
 function playRound(computer, player) {
-    
+    if (player === computer) {
+        return 2;
+    } 
 }
 
 function game() {}
