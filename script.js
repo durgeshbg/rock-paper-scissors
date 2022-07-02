@@ -3,25 +3,28 @@ function computePlay() {
     const computer = ['Rock', 'Paper', 'Scissors'];
     return computer[num];
 }
-let computerSelection = computePlay();
-let playerInput = prompt('Enter: ');
-let playerSelection = playerInput.charAt(0).toUpperCase() + playerInput.slice(1).toLowerCase();
-console.log(playerSelection)
-function playRound(computer, player) {
-    if (player === computer) {
+
+function playRound() {
+    let computerSelection = computePlay();
+    let playerInput = prompt('Enter: ');
+    let playerSelection =
+        playerInput.charAt(0).toUpperCase() +
+        playerInput.slice(1).toLowerCase();
+
+    if (playerSelection === computerSelection) {
         return 2;
-    } else if (player === 'Rock') {
-        if (computer === 'Scissors') {
+    } else if (playerSelection === 'Rock') {
+        if (computerSelection === 'Scissors') {
             return 1;
         }
         return 0;
-    } else if (player === 'Paper') {
-        if (computer === 'Rock') {
+    } else if (playerSelection === 'Paper') {
+        if (computerSelection === 'Rock') {
             return 1;
         }
         return 0;
     } else {
-        if (computer === 'Paper') {
+        if (computerSelection === 'Paper') {
             return 1;
         }
         return 0;
