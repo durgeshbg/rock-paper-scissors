@@ -15,6 +15,11 @@ function playRound(computer, player) {
             return 1;
         }
         return 0;
+    } else if (player === 'paper') {
+        if (computer === 'rock') {
+            return 1;
+        }
+        return 0;
     } 
 }
 
