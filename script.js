@@ -5,6 +5,7 @@ function computePlay() {
 }
 let computerSelection = computePlay();
 let playerInput = prompt('Enter: ');
+let playerSelection = playerInput.charAt(0).toUpperCase() + playerInput.slice(1).toLowerCase();
 console.log(playerSelection)
 function playRound(computer, player) {
     if (player === computer) {
