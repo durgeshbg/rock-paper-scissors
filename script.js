@@ -4,12 +4,11 @@ function computePlay() {
     return computer[num];
 }
 let computerSelection = computePlay();
-let playerSelection = prompt('Enter: ').toLowerCase();
+let playerInput = prompt('Enter: ');
+let playerSelection = playerInput.toLowerCase();
 
-function playRound() {
+function playRound(computer, player) {
     
 }
 
-function game() {
-    
-}
+function game() {}
