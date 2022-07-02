@@ -10,6 +10,11 @@ let playerSelection = playerInput.toLowerCase();
 function playRound(computer, player) {
     if (player === computer) {
         return 2;
+    } else if (player === 'rock') {
+        if (computer === 'scissors') {
+            return 1;
+        }
+        return 0;
     } 
 }
 
