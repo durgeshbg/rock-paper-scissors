@@ -20,7 +20,12 @@ function playRound(computer, player) {
             return 1;
         }
         return 0;
-    } 
+    } else {
+        if (computer === 'paper') {
+            return 1;
+        }
+        return 0;
+    }
 }
 
 function game() {}
