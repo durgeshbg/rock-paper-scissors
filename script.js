@@ -37,10 +37,15 @@ function game() {
     let computerResult = 0;
     for (let i = 0; i < 5; i++) {
         roundResult = playRound();
-        if (roundResult == 0) {
+        if (roundResult === 0) {
             computerResult++;
-        } else if (roundResult == 1) {
+        } else if (roundResult === 1) {
             playerResult++;
         }
+    }
+    if (playerResult > computerResult) {
+        return 1;
+    } else {
+        return 0;
     }
 }
