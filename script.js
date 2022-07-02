@@ -31,4 +31,16 @@ function playRound() {
     }
 }
 
-function game() {}
+function game() {
+    let roundResult;
+    let playerResult = 0;
+    let computerResult = 0;
+    for (let i = 0; i < 5; i++) {
+        roundResult = playRound();
+        if (roundResult == 0) {
+            computerResult++;
+        } else if (roundResult == 1) {
+            playerResult++;
+        }
+    }
+}
