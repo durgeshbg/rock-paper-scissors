@@ -24,6 +24,16 @@ const playRound = (e) => {
         if (computerSelection === 'paper') playerScore++;
         else computerScore++;
     }
+
+    updateScores(playerScore, computerScore);
+};
+
+const updateScores = (playerScore, computerScore) => {
+    const scores = document.querySelector('.scores');
+    if (playerScore >= 5) scores.innerHTML = `<h2>You won!!!</h2>`;
+    else if (computerScore >= 5) scores.innerHTML = `<h2>Computer won</h2>`;
+    else
+        scores.innerHTML = `<h2>Player: ${playerScore} Computer: ${computerScore}</h2>`;
 };
 
 const buttons = document.querySelectorAll('button');
