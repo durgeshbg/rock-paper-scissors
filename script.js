@@ -1,61 +1,29 @@
-function computePlay() {
-    let num = Math.floor(Math.random() * 3);
+const computerChoice = () => {
     const computer = ['rock', 'paper', 'scissors'];
-    return computer[num];
-}
+    return computer[Math.floor(Math.random() * 3)];
+};
 
-function playRound() {
-    let computerSelection = computePlay();
-    let playerInput = prompt('Enter: ');
-    let playerSelection = playerInput.toLowerCase();
+const playRound = () => {
+    let playerSelection = prompt('Enter: ').toLowerCase();
+    let computerSelection = computerChoice();
 
-    if (playerSelection === computerSelection) {
-        console.log('Tied');
-        return 2;
-    } else if (playerSelection === 'rock') {
-        if (computerSelection === 'scissors') {
-            console.log('You win! Rock beats Scissors');
-            return 1;
-        }
-        console.log('You lose! Paper beat Rock');
-        return 0;
+    if (playerSelection === computerSelection) return 0; // tie
+    else if (playerSelection === 'rock') {
+        if (computerSelection === 'scissors') return 1; // rock vs scissors
+        return 0; // rock vs paper
     } else if (playerSelection === 'paper') {
-        if (computerSelection === 'rock') {
-            console.log('You win! Paper beats Rock');
-            return 1;
-        }
-        console.log('You lose! Scissors beat Paper');
-        return 0;
-    } else {
-        if (computerSelection === 'paper') {
-            console.log('You win! Scissors beat Paper');
-            return 1;
-        }
-        console.log('You lose! Rock beats Scissors');
-        return 0;
+        if (computerSelection === 'rock') return 1; // paper vs rock
+        return 0; // paper vs scissors
+    } else if (playerSelection === 'scissors') {
+        if (computerSelection === 'paper') return 1; // scissors vs paper
+        return 0; // scissors vs rock
     }
-}
+};
 
-function game() {
-    let roundResult;
-    let playerResult = 0;
-    let computerResult = 0;
-    for (let i = 0; i < 5; i++) {
-        roundResult = playRound();
-        if (roundResult === 0) {
-            computerResult++;
-        } else if (roundResult === 1) {
-            playerResult++;
-        }
-    }
-    if (playerResult > computerResult) {
-        console.log('You Win!');
-        return;
-    } else if (playerResult < computerResult) {
-        console.log('Computer Wins!');
-        return;
-    } else {
-        console.log("It's Tie!");
-    }
-}
+const game = () => {
+    let score = 0;
+    for (let i = 0; i < 5; i++) score += playRound();
+    return score;
+};
+
 console.log(game());
