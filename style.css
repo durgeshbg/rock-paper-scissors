@@ -9,7 +9,13 @@
 
 h1 {
     font-size: 100px;
-    text-align: center;
+}
+
+body {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 button {
