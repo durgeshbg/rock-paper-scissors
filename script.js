@@ -29,13 +29,22 @@ const playRound = (e) => {
 };
 
 const updateScores = (playerScore, computerScore) => {
-    const scores = document.querySelector('.scores');
+    const scores = document.querySelector('.score');
     const winnerBoard = document.querySelector('.winner-board');
-    if (playerScore >= 5) winnerBoard.innerHTML = `<h2>You won!!!</h2>`;
-    else if (computerScore >= 5)
-        winnerBoard.innerHTML = `<h2>Computer won</h2>`;
-    else
-        scores.innerHTML = `<h2>Player: ${playerScore} Computer: ${computerScore}</h2>`;
+    let disable = false;
+    if (playerScore >= 5) {
+        winnerBoard.textContent = `YOU WON!`;
+        disable = true;
+    } else if (computerScore >= 5) {
+        winnerBoard.textContent = `COMPUTER WON`;
+        disable = true;
+    } else
+        scores.textContent = `Player: ${playerScore} Computer: ${computerScore}`;
+    if (disable) {
+        document
+            .querySelectorAll('.controls button')
+            .forEach((button) => button.disabled = true);
+    }
 };
 
 const buttons = document.querySelectorAll('button');
