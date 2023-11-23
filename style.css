@@ -6,3 +6,10 @@
         Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
         sans-serif;
 }
+
+button {
+    padding: 10px;
+    border: none;
+    margin: 10px;
+    font-size: 2rem;
+}
