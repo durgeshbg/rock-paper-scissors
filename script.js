@@ -12,7 +12,7 @@ const playRound = (e) => {
 
     document.querySelector(
         '.round'
-    ).innerHTML = `<h3>You: ${playerSelection.toUpperCase()} Computer: ${computerSelection.toUpperCase()}</h3>`;
+    ).innerHTML += `<p>You: ${playerSelection.toUpperCase()} Computer: ${computerSelection.toUpperCase()}</p>`;
 
     if (playerSelection === 'rock') {
         if (computerSelection === 'scissors') playerScore++;
@@ -30,8 +30,10 @@ const playRound = (e) => {
 
 const updateScores = (playerScore, computerScore) => {
     const scores = document.querySelector('.scores');
-    if (playerScore >= 5) scores.innerHTML = `<h2>You won!!!</h2>`;
-    else if (computerScore >= 5) scores.innerHTML = `<h2>Computer won</h2>`;
+    const winnerBoard = document.querySelector('.winner-board');
+    if (playerScore >= 5) winnerBoard.innerHTML = `<h2>You won!!!</h2>`;
+    else if (computerScore >= 5)
+        winnerBoard.innerHTML = `<h2>Computer won</h2>`;
     else
         scores.innerHTML = `<h2>Player: ${playerScore} Computer: ${computerScore}</h2>`;
 };
