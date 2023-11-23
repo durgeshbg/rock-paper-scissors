@@ -31,7 +31,9 @@ button:hover {
     background-color: silver;
     cursor: pointer;
 }
-
+button:disabled {
+    color: black;
+}
 .controls {
     display: flex;
     gap: 10px;
